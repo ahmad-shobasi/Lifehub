@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Layout } from './layouts/layout/layout';
+import { ThemeService } from './theme/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Layout } from './layouts/layout/layout';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('lifehub');
+export class App implements OnInit {
+  themeService = inject(ThemeService)
+  ngOnInit(): void {
+    this.themeService.initalTheme()
+  }
 }
