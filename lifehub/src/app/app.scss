@@ -13,12 +13,12 @@
 
 .topbar {
   grid-area: header;
-  background-color: #ddd;
+  background-color: vars.$topbar-bg-color;
 }
 
 .sidebar {
   grid-area: menu;
-  background-color: #3467b9;
+  background-color: vars.$sidebar-bg-color;
   width: 200px;
   transition: all 0.3s ease;
   overflow: hidden;
@@ -29,9 +29,11 @@
 
 .main-content {
   grid-area: content;
-  background-color: #d2d9e4;
+  background-color: vars.$main-content-bg-color;
+  color: vars.$main-content-txt-color;
 }
 .footer {
   grid-area: footer;
-  background-color: #71767d;
+  background-color: vars.$footer-bg-color;
+  color: vars.$footer-txt-color;
 }

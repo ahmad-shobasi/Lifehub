@@ -1,8 +1,9 @@
+@use "../../theme/variables.scss" as vars;
 .sidebar {
   transition: all 0.3s ease;
   overflow: hidden;
   padding: 1rem;
-  color: #ddd;
+  color: vars.$sidebar-txt-color;
 
   &.collapsed {
     width: 60px;
@@ -10,12 +11,20 @@
     .toggle-btn {
       margin-bottom: 1rem;
     }
+    .menu {
+      li {
+        justify-content: center;
+        i {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   .toggle-btn {
     background: none;
     border: none;
-    color: white;
+    color: vars.$sidebar-txt-color;
     font-size: 1.2rem;
     cursor: pointer;
   }
@@ -27,6 +36,7 @@
 
     li {
       display: flex;
+      justify-content: flex-start;
       align-items: center;
       padding: 0.5rem 0;
 
