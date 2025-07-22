@@ -1,1 +1,17 @@
-<p>layout works!</p>
+<div class="app">
+  <aside class="sidebar {{isCollpase ? 'collapsed' : ''}}">
+    <app-sidebar (resizeSidebar)="toggleSidebar()" />
+  </aside>
+
+  <header class="topbar">
+    <app-topbar />
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="footer">
+    <app-footer />
+  </footer>
+</div>

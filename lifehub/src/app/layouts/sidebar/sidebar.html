@@ -1,1 +1,33 @@
-<p>sidebar works!</p>
+<div class="sidebar" [class.collapsed]="isCollapsed">
+    <div class="d-flex justify-content-end">
+        <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+    </div>
+
+  <ul class="menu">
+    <li>
+      <i class="icon-home">
+        <span class="mdi mdi-home"></span>
+      </i>
+      @if (!isCollapsed) {
+          <span>Home</span>
+      }
+    </li>
+    <li>
+      <i class="icon-tasks">
+        <span class="mdi mdi-calendar-check-outline"></span>
+      </i>
+      @if (!isCollapsed) {
+          <span>Tasks</span>
+      }
+    </li>
+    <li>
+      <i class="icon-calendar">
+        <span class="mdi mdi-calendar-edit-outline"></span>
+      </i>
+      @if (!isCollapsed) {
+          <span>Calendar</span>
+      }
+    </li>
+    <!-- Add more items as needed -->
+  </ul>
+</div>

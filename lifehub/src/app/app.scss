@@ -1,0 +1,37 @@
+@use "./theme/variables.scss" as vars;
+
+.app {
+  display: grid;
+  grid-template-areas:
+    "menu header"
+    "menu content"
+    "menu footer";
+  grid-template-columns: auto 3fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+
+.topbar {
+  grid-area: header;
+  background-color: #ddd;
+}
+
+.sidebar {
+  grid-area: menu;
+  background-color: #3467b9;
+  width: 200px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  &.collapsed {
+    width: 60px;
+  }
+}
+
+.main-content {
+  grid-area: content;
+  background-color: #d2d9e4;
+}
+.footer {
+  grid-area: footer;
+  background-color: #71767d;
+}

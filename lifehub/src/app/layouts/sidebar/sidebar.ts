@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.scss'
 })
 export class Sidebar {
+  isCollapsed:boolean = false;
+  @Output() resizeSidebar = new EventEmitter()
 
+  toggleSidebar(){
+    this.isCollapsed = !this.isCollapsed
+    this.resizeSidebar.emit();
+  }
 }
