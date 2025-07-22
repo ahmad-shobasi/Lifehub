@@ -1,0 +1,19 @@
+@import "./themes/dark.scss";
+@import "./themes/light.scss";
+$topbar-bg-color: var(--topbar-bg-color);
+$topbar-txt-color: var(--topbar-txt-color);
+
+$sidebar-bg-color: var(--sidebar-bg-color);
+$sidebar-txt-color: var(--sidebar-txt-color);
+
+$main-content-bg-color: var(--main-content-bg-color);
+$main-content-txt-color: var(--main-content-txt-color);
+
+$footer-bg-color: var(--footer-bg-color);
+$footer-txt-color: var(--footer-txt-color);
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$danger-color: var(--danger-color);
+$success-color: var(--success-color);
+$alert-color: var(--alert-color);
