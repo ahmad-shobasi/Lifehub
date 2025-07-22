@@ -1,1 +1,12 @@
-<p>topbar works!</p>
+<div class="topbar-container d-flex justify-content-between">
+    <div class=""></div>
+    <div class="">
+        <span (click)="toggleTheme()" class="mode-btn">
+            @if (isDarkTheme) {
+                <span class="mdi mdi-moon-waxing-crescent"></span>
+            }@else {
+                <span class="mdi mdi-weather-sunny"></span>
+            }
+        </span>
+    </div>
+</div>
