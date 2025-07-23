@@ -16,10 +16,15 @@ export class ThemeService {
       'data-theme',
       this.isDarkSchema ? 'dark' : 'light'
     );
+    document.documentElement.setAttribute(
+      'data-bs-theme',
+      this.isDarkSchema ? 'dark' : 'light'
+    );
   }
 
   setThemeMode(mode: Mode) {
     this.mode.set(mode);
     document.documentElement.setAttribute('data-theme', mode);
+    document.documentElement.setAttribute('data-bs-theme', mode);
   }
 }
