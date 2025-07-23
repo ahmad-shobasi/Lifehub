@@ -1,0 +1,47 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-subtitle>Add new task</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form action="" [formGroup]="taskForm">
+      <div class="my-3">
+        <label for="">Task title</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="taskTitle"
+          [value]="form['taskTitle']"
+        />
+      </div>
+      <div class="my-3">
+        <label for="">Description</label>
+        <textarea
+          class="form-control"
+          type="text"
+          formControlName="description"
+          [value]="form['description']"
+          rows="5"
+        ></textarea>
+      </div>
+      <div class="my-3">
+        <select
+          class="form-select"
+          formControlName="taskPriority"
+          [value]="form['taskPriority']"
+        >
+          <option value="0" selected disabled class="text-muted">
+            Select task priority
+          </option>
+          <option value="1" class="txt-primary">to-do</option>
+          <option value="2" class="txt-alert">in progress</option>
+          <option value="3" class="txt-danger">overdue</option>
+          <option value="4" class="txt-success">done</option>
+        </select>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions [align]="'end'">
+    <button matButton (click)="taskForm.reset()">dismiss</button>
+    <button matButton (click)="createTask(form)">Save</button>
+  </mat-card-actions>
+</mat-card>
