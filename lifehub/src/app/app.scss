@@ -9,6 +9,7 @@
   grid-template-columns: auto 3fr;
   grid-template-rows: auto 1fr auto;
   height: 100%;
+  overflow: hidden;
 }
 
 .topbar {
@@ -31,6 +32,8 @@
   grid-area: content;
   background-color: vars.$main-content-bg-color;
   color: vars.$main-content-txt-color;
+  max-height: 100%;
+  overflow-y: auto;
 }
 .footer {
   grid-area: footer;
