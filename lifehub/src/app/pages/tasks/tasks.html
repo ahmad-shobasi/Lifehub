@@ -1,1 +1,20 @@
-<p>tasks works!</p>
+<app-header
+  pageTitle="Tasks"
+  subtitle="Create, Edit, Delete and more control options with your daily tasks."
+/>
+<div class="content">
+  <div class="row g-0">
+    <div class="col-4">
+      <app-tasks-form (updateTaskList)="createTask($event)" />
+    </div>
+    <div class="col-2"></div>
+    <div class="col-5 px-3">
+      @for (card of tasksList; track $index) {
+      <div class="my-2">
+        <app-task-card [card]="card" />
+      </div>
+      }
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
