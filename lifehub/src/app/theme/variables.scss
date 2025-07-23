@@ -17,3 +17,17 @@ $secondary-color: var(--secondary-color);
 $danger-color: var(--danger-color);
 $success-color: var(--success-color);
 $alert-color: var(--alert-color);
+
+$colors: (
+  "primary": $primary-color,
+  "secondary": $secondary-color,
+  "danger": $danger-color,
+  "success": $success-color,
+  "alert": $alert-color,
+);
+
+@each $color, $value in $colors {
+  .txt-#{$color} {
+    color: $value !important;
+  }
+}
