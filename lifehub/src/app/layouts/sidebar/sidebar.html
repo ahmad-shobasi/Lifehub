@@ -6,7 +6,7 @@
     </div>
 
   <ul class="menu">
-    <li>
+    <li (click)="navigateTo('')">
       <i class="icon-home">
         <span class="mdi mdi-home"></span>
       </i>
@@ -14,7 +14,7 @@
           <span>Home</span>
       }
     </li>
-    <li>
+    <li (click)="navigateTo('tasks')">
       <i class="icon-tasks">
         <span class="mdi mdi-calendar-check-outline"></span>
       </i>
@@ -22,7 +22,7 @@
           <span>Tasks</span>
       }
     </li>
-    <li>
+    <li (click)="navigateTo('calendar')">
       <i class="icon-calendar">
         <span class="mdi mdi-calendar-edit-outline"></span>
       </i>
@@ -30,6 +30,13 @@
           <span>Calendar</span>
       }
     </li>
-    <!-- Add more items as needed -->
+    <li (click)="navigateTo('notes')">
+      <i class="icon-calendar">
+        <span class="mdi mdi-note-multiple-outline"></span>
+      </i>
+      @if (!isCollapsed) {
+          <span>Notes</span>
+      }
+    </li>
   </ul>
 </div>
