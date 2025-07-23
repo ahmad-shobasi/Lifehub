@@ -1,12 +1,62 @@
 <div class="topbar-container d-flex justify-content-between">
-    <div class=""></div>
-    <div class="">
-        <span (click)="toggleTheme()" class="mode-btn">
-            @if (isDarkTheme) {
-                <span class="mdi mdi-moon-waxing-crescent"></span>
-            }@else {
-                <span class="mdi mdi-weather-sunny"></span>
-            }
-        </span>
+  <div class="d-flex">
+    <div class="input-group mx-3">
+      <input
+        type="text"
+        class="form-control"
+        style="border-radius: 15px 0 0 15px"
+        #searchInput
+      />
+      <span
+        class="input-group-text"
+        style="cursor: pointer; border-radius: 0 15px 15px 0"
+        (click)="search(searchInput)"
+      >
+        <span class="mdi mdi-magnify"></span>
+      </span>
     </div>
+    <div class="">
+      <button matButton class="mat-btn-primary" [matMenuTriggerFor]="addNew">
+        <span class="mdi mdi-plus">Add</span>
+      </button>
+      <mat-menu #addNew="matMenu">
+        <button mat-menu-item>Task</button>
+        <button mat-menu-item>Calendar event</button>
+        <button mat-menu-item>Note</button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="d-flex">
+    <div>
+      <span (click)="toggleTheme()" class="topbar-btn">
+        @if (isDarkTheme) {
+        <span class="mdi mdi-moon-waxing-crescent"></span>
+        }@else {
+        <span class="mdi mdi-weather-sunny"></span>
+        }
+      </span>
+    </div>
+    <div>
+      <span class="topbar-btn">
+        <span
+          class="mdi mdi-account-circle-outline"
+          [mat-menu-trigger-for]="account"
+        ></span>
+        <mat-menu #account="matMenu">
+          <button mat-menu-item>
+            <span class="mdi mdi-account-details-outline mx-2"></span>
+            My account
+          </button>
+          <button mat-menu-item>
+            <span class="mdi mdi-bell-outline mx-2"></span>
+            Notifications
+          </button>
+          <button mat-menu-item>
+            <span class="mdi mdi-logout mx-2"></span>
+            Logout
+          </button>
+        </mat-menu>
+      </span>
+    </div>
+  </div>
 </div>
