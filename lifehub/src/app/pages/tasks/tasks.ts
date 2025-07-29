@@ -5,7 +5,7 @@ import {
   TaskCard,
   TaskCardModel,
 } from '../../shared/components/task-card/task-card';
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, FormGroup } from '@angular/forms';
 import { PriorityEnum } from '../../shared/components/priority/priority';
 
 @Component({
@@ -22,18 +22,19 @@ export class Tasks {
       priority: PriorityEnum.InProgress,
     },
   ];
-  createTask(form: { [key: string]: AbstractControl<any, any, any> }) {
+  createTask(form: FormGroup) {
+    const formControls = form.controls;
     const priorityValues = [
       PriorityEnum.Todo,
       PriorityEnum.InProgress,
       PriorityEnum.Overdue,
       PriorityEnum.Done,
     ];
-    const priorityIndex = form['taskPriority'].value - 1;
+    const priorityIndex = formControls['taskPriority'].value - 1;
 
     const data: TaskCardModel = {
-      title: form['taskTitle'].value,
-      description: form['description'].value,
+      title: formControls['taskTitle'].value,
+      description: formControls['description'].value,
       priority: priorityValues[priorityIndex],
       // deleteTask: ()=> this.deleteTaskCard(1),
     };

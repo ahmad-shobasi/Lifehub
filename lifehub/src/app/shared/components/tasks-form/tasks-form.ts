@@ -30,7 +30,7 @@ export class TasksForm {
   get form() {
     return this.taskForm.controls;
   }
-  createTask(form: { [key: string]: AbstractControl<any, any, any> }) {
+  createTask(form: FormGroup) {
     if (this.taskForm.valid) {
       this.updateTaskList.emit(form);
       this.taskForm.reset();
