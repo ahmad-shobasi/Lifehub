@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-subtitle> Add new event </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="eventForm">
+      <div class="my-3">
+        <label for="">Event title</label>
+        <input
+          class="form-control"
+          type="text"
+          formControlName="eventTitle"
+          [value]="form['eventTitle']"
+        />
+      </div>
+      <div class="my-3">
+        <label for="">Start date</label>
+        <input
+          class="form-control"
+          type="date"
+          formControlName="start"
+          [value]="form['start']"
+        />
+      </div>
+      <div class="my-3">
+        <label for="">End date</label>
+        <input
+          class="form-control"
+          type="date"
+          formControlName="end"
+          [value]="form['end']"
+        />
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions [align]="'end'">
+    <button matButton (click)="eventForm.reset()">dismiss</button>
+    <button matButton (click)="createEvent(eventForm)">Save</button>
+  </mat-card-actions>
+</mat-card>
