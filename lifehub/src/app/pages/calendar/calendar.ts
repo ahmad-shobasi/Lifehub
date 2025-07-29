@@ -6,10 +6,12 @@ import {
 import { CalendarModule } from 'angular-calendar';
 import { CalendarView, CalendarEvent } from 'angular-calendar';
 import { addHours } from 'date-fns';
+import { CalendarForm } from '../../shared/components/calendar-form/calendar-form';
+import { Header } from '../../shared/components/header/header';
 
 @Component({
   selector: 'app-calendar',
-  imports: [CalendarModule],
+  imports: [CalendarModule, CalendarForm, Header],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
   templateUrl: './calendar.html',
